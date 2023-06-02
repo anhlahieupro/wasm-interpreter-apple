@@ -1,4 +1,4 @@
-import CWasm3
+//import CWasm3
 import Foundation
 import Synchronized
 
@@ -45,23 +45,23 @@ func importedFunction(
     return lock.locked { importedFunctionCache[id]?[context] }
 }
 
-func handleImportedFunction(
-    _ runtime: UnsafeMutablePointer<M3Runtime>?,
-    _ context: UnsafeMutablePointer<M3ImportContext>?,
-    _ stackPointer: UnsafeMutablePointer<UInt64>?,
-    _ heap: UnsafeMutableRawPointer?
-) -> UnsafeRawPointer? {
-    guard let id = m3_GetUserData(runtime)?.load(as: UInt64.self)
-    else { return UnsafeRawPointer(m3Err_trapUnreachable) }
-
-    guard let userData = context?.pointee.userdata
-    else { return UnsafeRawPointer(m3Err_trapUnreachable) }
-
-    guard let function = importedFunction(for: userData, instanceIdentifier: id)
-    else { return UnsafeRawPointer(m3Err_trapUnreachable) }
-
-    return function(stackPointer, heap)
-}
+//func handleImportedFunction(
+//    _ runtime: UnsafeMutablePointer<M3Runtime>?,
+//    _ context: UnsafeMutablePointer<M3ImportContext>?,
+//    _ stackPointer: UnsafeMutablePointer<UInt64>?,
+//    _ heap: UnsafeMutableRawPointer?
+//) -> UnsafeRawPointer? {
+//    guard let id = m3_GetUserData(runtime)?.load(as: UInt64.self)
+//    else { return UnsafeRawPointer(m3Err_trapUnreachable) }
+//
+//    guard let userData = context?.pointee.userdata
+//    else { return UnsafeRawPointer(m3Err_trapUnreachable) }
+//
+//    guard let function = importedFunction(for: userData, instanceIdentifier: id)
+//    else { return UnsafeRawPointer(m3Err_trapUnreachable) }
+//
+//    return function(stackPointer, heap)
+//}
 
 // MARK: - Generating instance identifiers
 
