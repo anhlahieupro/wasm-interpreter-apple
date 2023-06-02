@@ -215,16 +215,16 @@ extension WasmInterpreter {
 
         do {
             setImportedFunction(handler, for: context, instanceIdentifier: id)
-//            try WasmInterpreter.check(
-//                m3_LinkRawFunctionEx(
-//                    module,
-//                    namespace,
-//                    name,
-//                    signature,
-//                    handleImportedFunction,
-//                    context
-//                )
-//            )
+            try WasmInterpreter.check(
+                m3_LinkRawFunctionEx(
+                    module,
+                    namespace,
+                    name,
+                    signature,
+                    handleImportedFunction,
+                    context
+                )
+            )
             lock.locked { importedFunctionContexts.append(context) }
         } catch {
             removeImportedFunction(for: context, instanceIdentifier: id)
