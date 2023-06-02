@@ -17,22 +17,19 @@ let package = Package(
             url: "https://github.com/anhlahieupro/synchronized.git",
             branch: "test"
         ),
+        .package(url: "https://github.com/shareup/cwasm3.git",
+                 .upToNextMinor(from: "0.5.0"))
     ],
     targets: [
         .target(
             name: "WasmInterpreter",
             dependencies: [
-                "CWasm3",
                 .product(name: "Synchronized", package: "synchronized"),
+                .product(name: "CWasm3", package: "cwasm3"),
             ],
             cSettings: [
                 .define("APPLICATION_EXTENSION_API_ONLY", to: "YES"),
             ]
-        ),
-        .binaryTarget(
-            name: "CWasm3",
-            url: "https://github.com/Skittyblock/cwasm3/releases/download/v0.5.3/CWasm3-0.5.0.xcframework.zip",
-            checksum: "dfe038231d10c219e03120bbe1f562a1347be095fc30880167074321a124f32a"
         ),
         .testTarget(
             name: "WasmInterpreterTests",
