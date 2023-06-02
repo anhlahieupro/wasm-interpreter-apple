@@ -14,8 +14,8 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/shareup/synchronized.git",
-            from: "4.0.0"
+            url: "https://github.com/anhlahieupro/synchronized.git",
+            branch: "test"
         ),
     ],
     targets: [
