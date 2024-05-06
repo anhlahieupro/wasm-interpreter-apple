@@ -1202,7 +1202,7 @@ public extension WasmInterpreter {
         )
     }
     
-    public func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Ret>(
+    func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Ret>(
         named name: String,
         namespace: String,
         block: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) throws -> Ret
@@ -1238,7 +1238,7 @@ public extension WasmInterpreter {
         try self.importNativeFunction(named: name, namespace: namespace, signature: sig, handler: importedFunction)
     }
     
-    public func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
+    func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10>(
         named name: String,
         namespace: String,
         block: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10) throws -> Void
@@ -1274,7 +1274,7 @@ public extension WasmInterpreter {
         try self.importNativeFunction(named: name, namespace: namespace, signature: sig, handler: importedFunction)
     }
     
-    public func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Ret>(
+    func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Ret>(
         named name: String,
         namespace: String,
         block: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13) throws -> Ret
@@ -1317,7 +1317,7 @@ public extension WasmInterpreter {
         try self.importNativeFunction(named: name, namespace: namespace, signature: sig, handler: importedFunction)
     }
     
-    public func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16>(
+    func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16>(
         named name: String,
         namespace: String,
         block: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16) throws -> Void
@@ -1362,7 +1362,7 @@ public extension WasmInterpreter {
         try self.importNativeFunction(named: name, namespace: namespace, signature: sig, handler: importedFunction)
     }
     
-    public func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17>(
+    func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17>(
         named name: String,
         namespace: String,
         block: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17) throws -> Void
@@ -1409,7 +1409,7 @@ public extension WasmInterpreter {
         try self.importNativeFunction(named: name, namespace: namespace, signature: sig, handler: importedFunction)
     }
     
-    public func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Ret>(
+    func addImportHandler<Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20, Ret>(
         named name: String,
         namespace: String,
         block: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Arg10, Arg11, Arg12, Arg13, Arg14, Arg15, Arg16, Arg17, Arg18, Arg19, Arg20) throws -> Ret

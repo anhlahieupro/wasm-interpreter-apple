@@ -120,11 +120,12 @@ public extension WasmInterpreter {
     }
 
     func writeToHeap<T: WasmTypeProtocol>(values: [T], byteOffset: Int) throws {
-        var values = values
-        try writeToHeap(
-            data: Data(bytes: &values, count: values.count * MemoryLayout<T>.size),
-            byteOffset: byteOffset
-        )
+        try withUnsafePointer(to: values) { valuesPtr in
+            try writeToHeap(
+                data: Data(bytes: valuesPtr, count: values.count * MemoryLayout<T>.size),
+                byteOffset: byteOffset
+            )
+        }
     }
 
     func writeToHeap(data: Data, byteOffset: Int) throws {
