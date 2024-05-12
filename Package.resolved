@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "cwasm3",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/anhlahieupro/cwasm3",
+      "state" : {
+        "branch" : "main",
+        "revision" : "dec3409feeea0cca5a27de75f6a499aa497de2d9"
+      }
+    }
+  ],
+  "version" : 2
+}

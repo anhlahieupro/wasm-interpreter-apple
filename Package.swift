@@ -17,22 +17,27 @@ let package = Package(
 //            url: "https://github.com/shareup/synchronized.git",
 //            from: "4.0.0"
 //        ),
+        .package(
+            url: "https://github.com/anhlahieupro/cwasm3.git",
+            branch: "main"
+        ),
     ],
     targets: [
         .target(
             name: "WasmInterpreter",
             dependencies: [
-                "CWasm3",
+                .product(name: "CWasm3", package: "cwasm3"),
+//                "CWasm3",
 //                .product(name: "Synchronized", package: "synchronized"),
             ],
             cSettings: [
                 .define("APPLICATION_EXTENSION_API_ONLY", to: "YES"),
             ]
         ),
-        .binaryTarget(
-            name: "CWasm3",
-            path: "./Sources/WasmInterpreter/CWasm3.xcframework"
-        ),
+//        .binaryTarget(
+//            name: "CWasm3",
+//            path: "./Sources/WasmInterpreter/CWasm3.xcframework"
+//        ),
         .testTarget(
             name: "WasmInterpreterTests",
             dependencies: ["WasmInterpreter"],
