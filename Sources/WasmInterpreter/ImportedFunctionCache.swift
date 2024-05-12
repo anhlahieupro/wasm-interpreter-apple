@@ -1,6 +1,6 @@
 import CWasm3
 import Foundation
-import Synchronized
+//import Synchronized
 
 // MARK: - Managing imported functions
 

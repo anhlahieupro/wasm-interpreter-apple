@@ -1,6 +1,6 @@
 import CWasm3
 import Foundation
-import Synchronized
+//import Synchronized
 
 public final class WasmInterpreter {
     private var id: UInt64
@@ -324,5 +324,15 @@ extension WasmInterpreter {
             throw WasmInterpreterError.wasm3Error(name)
         }
         return global
+    }
+}
+
+public final class Lock {
+    let lock = NSRecursiveLock()
+    
+    public func locked<T>(_ block: () throws -> T) rethrows -> T {
+        lock.lock()
+        defer { lock.unlock() }
+        return try block()
     }
 }

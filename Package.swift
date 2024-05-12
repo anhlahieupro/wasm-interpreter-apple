@@ -13,17 +13,17 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(
-            url: "https://github.com/shareup/synchronized.git",
-            from: "4.0.0"
-        ),
+//        .package(
+//            url: "https://github.com/shareup/synchronized.git",
+//            from: "4.0.0"
+//        ),
     ],
     targets: [
         .target(
             name: "WasmInterpreter",
             dependencies: [
                 "CWasm3",
-                .product(name: "Synchronized", package: "synchronized"),
+//                .product(name: "Synchronized", package: "synchronized"),
             ],
             cSettings: [
                 .define("APPLICATION_EXTENSION_API_ONLY", to: "YES"),
