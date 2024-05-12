@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "WasmInterpreter",
     platforms: [
-        .macOS(.v11), .iOS(.v14),
+        .macOS(.v10_15),
     ],
     products: [
         .library(
